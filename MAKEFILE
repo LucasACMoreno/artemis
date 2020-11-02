@@ -1,0 +1,7 @@
+install:
+	pip install -r .['dev']
+
+run:
+	export FLASK_ENV=development
+	export FLASK_APP=artemis/app.py
+	flask run
