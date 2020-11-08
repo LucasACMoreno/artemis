@@ -9,5 +9,5 @@ SQLALCHEMY_TRACK_MODIFICATIONS = false
 ADMIN_NAME = "Artemis MusIcA (Dev)"
 
 [production]
-SQLALCHEMY_DATABASE_URI = "mysql:///mysite.db"
+SQLALCHEMY_DATABASE_URI = "mysql:///artemis.db"
 SQLALCHEMY_TRACK_MODIFICATIONS = false

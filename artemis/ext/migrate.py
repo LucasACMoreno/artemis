@@ -1,6 +1,6 @@
 from flask_migrate import Migrate
-from mysite.ext.db import db
-from mysite.ext.db import models
+from artemis.ext.db import db
+from artemis.ext.db import models
 
 migrate = Migrate()
 

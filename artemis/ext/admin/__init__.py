@@ -1,8 +1,8 @@
 from flask_admin import Admin
 from flask_admin.actions import action
 from flask_admin.contrib.sqla import ModelView, filters
-from mysite.ext.db import db
-from mysite.ext.db.models import User, Address
+from artemis.ext.db import db
+from artemis.ext.db.models import User, Address
 from flask import flash
 
 

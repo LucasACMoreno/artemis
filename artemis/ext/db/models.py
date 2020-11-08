@@ -1,4 +1,4 @@
-from mysite.ext.db import db
+from artemis.ext.db import db
 
 
 class User(db.Model):

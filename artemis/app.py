@@ -1,11 +1,11 @@
 from flask import Flask
 
-from mysite.ext import site
-from mysite.ext import db
-from mysite.ext import config
-from mysite.ext import cli
-from mysite.ext import migrate
-from mysite.ext import admin
+from artemis.ext import site
+from artemis.ext import db
+from artemis.ext import config
+from artemis.ext import cli
+from artemis.ext import migrate
+from artemis.ext import admin
 
 
 def create_app():
