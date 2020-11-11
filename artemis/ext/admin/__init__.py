@@ -5,9 +5,21 @@ from artemis.ext.db import db
 from artemis.ext.db.models import User, Address
 from flask import flash
 
+from flask_simplelogin import SimpleLogin, login_required
+from flask_admin.base import AdminIndexView
+from flask_admin.contrib import sqla
+
 
 site_admin = Admin()
 
+def verify_login(user):
+    if (user.get("username") == "admin" and user.get("password") == "123!"):
+        return True
+    else:
+        return False
+
+AdminIndexView._handle_view = login_required(AdminIndexView._handle_view)
+# sqla.ModelView._handle_view = login_required(sqla.ModelView._handle_view)
 
 def format_user(self, request, user, *args):
     return user.email.split("@")[0]
@@ -51,4 +63,6 @@ def init_app(app):
     
     site_admin.add_view(UserAdmin(User, db.session))
     site_admin.add_view(ModelView(Address, db.session))
+
+    SimpleLogin(app, login_checker=verify_login)
     
