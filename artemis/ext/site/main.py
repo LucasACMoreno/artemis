@@ -14,3 +14,7 @@ def bandas():
 @bp.route("/welcome", methods=["POST"])
 def welcome():
     return render_template("index.html", visitante=request.values['name'])
+
+@bp.route("/admin")
+def admin():
+    return render_template("admin.html")

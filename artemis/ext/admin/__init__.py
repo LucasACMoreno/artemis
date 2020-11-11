@@ -2,13 +2,15 @@ from flask_admin import Admin
 from flask_admin.actions import action
 from flask_admin.contrib.sqla import ModelView, filters
 from artemis.ext.db import db
-from artemis.ext.db.models import User, Address
+from artemis.ext.db.models import User
 from flask import flash
 
 from flask_simplelogin import SimpleLogin, login_required
 from flask_admin.base import AdminIndexView
 from flask_admin.contrib import sqla
 
+from flask import request, render_template
+from flask import Blueprint
 
 site_admin = Admin()
 
@@ -55,14 +57,12 @@ class UserAdmin(ModelView):
         db.session.commit()
         flash("Alteração realizada com sucesso!", "success")
 
-
 def init_app(app):
     site_admin.init_app(app)
     site_admin.name = app.config["ADMIN_NAME"]
     site_admin.template_mode = "bootstrap3"
     
     site_admin.add_view(UserAdmin(User, db.session))
-    site_admin.add_view(ModelView(Address, db.session))
-
+    
     SimpleLogin(app, login_checker=verify_login)
     
