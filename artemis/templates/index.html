@@ -11,6 +11,9 @@
           <br>
           Python + Flask + Bulma
         </h2>
+        Letra Digitada: <b>{{letra}}</b>
+        <br>
+        A letra é da banda: <b>{{resultado}}</b>
       </div>
     </div>
   </section>
@@ -19,9 +22,9 @@
 {% block main %}
 <form method="POST" action="/welcome"> 
     <div class="field">
-        <label class="label">Name</label>
+        <label class="label">Digite a letra</label>
         <div class="control">
-            <input name="name" class="input" type="text" placeholder="Text input">
+            <input name="letra" class="input" type="text" placeholder="Text input">
         </div>
     </div>
 

@@ -1,6 +1,5 @@
 from artemis.ext.db import db
 
-
 class User(db.Model):
     __tablename__ = "user"
     id = db.Column("id", db.Integer, primary_key=True)
